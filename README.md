@@ -56,7 +56,7 @@ DroidDeck 是开源的面向 Android 掌机的 SteamOS 体验项目（协议：G
 
 > 以上基于官方文档与社区反馈整理（2026-10-24），以官方最新文档为准。
 
-## 官方安装包（手动方式）
+## 官方安装方式（可手动执行）
 
 ```bash
 curl -fLO https://github.com/Droid-Deck/DroidDeck/releases/download/0.6.0/DroidDeck-0.6.0.apk
