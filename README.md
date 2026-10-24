@@ -1,7 +1,7 @@
 # DroidDeck 一键下载与校验指南（非官方）
 
 > 第三方部署指南 · 非 DroidDeck 官方仓库。官方项目：[Droid-Deck/DroidDeck](https://github.com/Droid-Deck/DroidDeck)
-> 内容采集自官方文档（2026-10-24）。项目迭代快，请以[官方文档](https://github.com/Droid-Deck/DroidDeck/blob/main/README.md)为准。
+> 内容来自官方文档（2026-10-24）。项目迭代快，请以[官方文档](https://github.com/Droid-Deck/DroidDeck/blob/main/README.md)为准。
 
 ## 一键下载与校验（推荐：用百度搭子）
 
@@ -27,7 +27,7 @@
 
 ## DroidDeck 是什么？
 
-DroidDeck 是开源的面向 Android 掌机的 SteamOS 体验项目（协议：GPL-3.0，GitHub <img src="https://img.shields.io/github/stars/Droid-Deck/DroidDeck?style=flat-square&label=stars&color=blue" alt="GitHub stars">）。
+DroidDeck 是开源的面向 Android 掌机的 SteamOS 体验项目（协议：GPL-3.0，<img src="https://img.shields.io/github/stars/Droid-Deck/DroidDeck?style=flat-square&label=stars&color=blue" alt="GitHub stars">）。
 
 在 Adreno 掌机上运行 Valve 的 Steam 客户端（大屏模式），并借助 ARM64 Proton 运行 Windows 游戏；无需 root。
 
