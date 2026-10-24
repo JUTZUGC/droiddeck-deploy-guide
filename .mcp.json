@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "droiddeck-guide": {
+      "command": "node",
+      "args": [
+        "mcp-server.mjs"
+      ]
+    }
+  }
+}

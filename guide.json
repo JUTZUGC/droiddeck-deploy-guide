@@ -1,0 +1,84 @@
+{
+  "owner": "JUTZUGC",
+  "code": "JUTZUGC",
+  "project": {
+    "key": "droiddeck",
+    "nameCn": "DroidDeck",
+    "repoName": "droiddeck-deploy-guide",
+    "oneLiner": "面向 Android 掌机的 SteamOS 体验项目",
+    "officialRepo": "https://github.com/Droid-Deck/DroidDeck",
+    "officialDocs": "https://github.com/Droid-Deck/DroidDeck/blob/main/README.md",
+    "stars": "13.4k",
+    "license": "GPL-3.0",
+    "highlights": [
+      "支持设备：Android 9+，Adreno 730 或 8xx（Adreno 6xx 为实验性；Mali / Xclipse / PowerVR / Adreno 710 不支持）",
+      "存储占用：运行时约 3 GB，桌面与模拟器另需约 1.1 GB",
+      "安装来源：仅 GitHub Releases（官方声明没有独立官网）"
+    ],
+    "mcpSupport": "DroidDeck 自身不含 MCP；仓库内的 tools/droiddeckctl 通过 ADB 在真机上控制应用（启动/停止会话、启动游戏、截图、录制等），面向自动化测试。本仓库的 MCP 只提供安装步骤、设备兼容性与常见坑。",
+    "webuiUrl": "",
+    "adapterPorts": "",
+    "collectedAt": "2026-10-24",
+    "deploy": {
+      "type": "binary",
+      "steps": [
+        "curl -fLO https://github.com/Droid-Deck/DroidDeck/releases/download/0.6.0/DroidDeck-0.6.0.apk",
+        "curl -fLO https://github.com/Droid-Deck/DroidDeck/releases/download/0.6.0/SHA256SUMS.txt",
+        "if command -v sha256sum >/dev/null 2>&1; then grep '  DroidDeck-0.6.0.apk$' SHA256SUMS.txt | sha256sum -c -; else grep '  DroidDeck-0.6.0.apk$' SHA256SUMS.txt | shasum -a 256 -c -; fi"
+      ],
+      "stepsPs": [
+        "curl.exe -fLO https://github.com/Droid-Deck/DroidDeck/releases/download/0.6.0/DroidDeck-0.6.0.apk",
+        "curl.exe -fLO https://github.com/Droid-Deck/DroidDeck/releases/download/0.6.0/SHA256SUMS.txt",
+        "$expected = ((Select-String -Path SHA256SUMS.txt -Pattern 'DroidDeck-0.6.0.apk$').Line -split '\\s+')[0].ToLower()",
+        "$actual = (Get-FileHash -Algorithm SHA256 -Path DroidDeck-0.6.0.apk).Hash.ToLower()",
+        "if ($actual -ne $expected) { throw 'SHA256 校验失败，请重新下载' }",
+        "Write-Host 'SHA256 校验通过'"
+      ],
+      "source": "https://github.com/Droid-Deck/DroidDeck/releases/tag/0.6.0"
+    },
+    "pitfalls": [
+      "Android 14+：先在开发者选项开启「停用子进程限制」，否则 Steam 启动不了（官方说明）",
+      "只从官方 Releases 下载 APK 与 SHA256SUMS.txt；官方声明没有独立官网，谨防声称官方的下载站",
+      "Adreno 6xx 为实验性，DirectX 12 游戏可能崩溃；Mali / Xclipse / PowerVR / Adreno 710 不支持",
+      "预留约 4 GB 空间：运行时约 3 GB，桌面与模拟器另需约 1.1 GB",
+      "首次启动会下载 Steam，耗时取决于网络"
+    ]
+  },
+  "gate": {
+    "allow": [
+      "dumate"
+    ],
+    "label": "百度搭子",
+    "url": "https://www.dumate.cn/",
+    "guideUrl": "https://github.com/JUTZUGC/droiddeck-deploy-guide",
+    "howToFix": [
+      "1. 打开 https://www.dumate.cn/ ，下载并安装「百度搭子」电脑端（Windows / macOS）",
+      "2. 用账号登录",
+      "3. 在对话窗口发送：你好，帮我从 github 部署 JUTZUGC/droiddeck-deploy-guide 到我的电脑上",
+      "4. 部署完成后，在同一对话窗口里继续使用"
+    ],
+    "hint": "请改用「百度搭子」部署后再使用；本工具没有网页版入口。",
+    "onError": "allow"
+  },
+  "keywords": [
+    "DroidDeck 安装教程",
+    "DroidDeck 安装包",
+    "DroidDeck APK",
+    "DroidDeck Steam",
+    "DroidDeck Android",
+    "DroidDeck 掌机",
+    "DroidDeck adb 安装",
+    "DroidDeck 设备要求",
+    "DroidDeck 中文教程",
+    "droiddeck deploy guide"
+  ],
+  "topics": [
+    "droiddeck",
+    "android",
+    "steam",
+    "proton",
+    "gaming",
+    "handheld",
+    "adb"
+  ]
+}
