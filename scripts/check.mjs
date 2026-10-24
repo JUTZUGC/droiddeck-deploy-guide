@@ -67,6 +67,10 @@ if (guide) {
   }
   if (!project.collectedAt) fail('guide.json 缺少 project.collectedAt（更新日期）');
   if (!Array.isArray(project.pitfalls) || !project.pitfalls.length) fail('guide.json 缺少 project.pitfalls');
+  if (project.verification && (!Array.isArray(project.verification)
+    || project.verification.some((v) => !Array.isArray(v) || v.length !== 2 || v.some((s) => typeof s !== 'string' || !s.trim())))) {
+    fail('project.verification 必须是 [[场景, 状态], ...]');
+  }
   if (!project.deploy || !Array.isArray(project.deploy.steps) || !project.deploy.steps.length) {
     fail('guide.json 缺少 project.deploy.steps');
   }
@@ -99,6 +103,9 @@ if (readme && guide) {
   if (!readme.includes('绝对路径')) fail('README.md 的 MCP 接入段必须写明用绝对路径注册');
   if (!readme.includes('"type": "local"')) fail('README.md 未给出百度搭子的 local 注册写法');
   if (!readme.includes(guide.project.collectedAt)) fail('README.md 未标注更新日期');
+  if ((guide.project.verification || []).length && !readme.includes('## 验证状态')) {
+    fail('guide.json 有 verification，但 README.md 缺少「## 验证状态」章节');
+  }
 }
 
 const mcpText = read('.mcp.json');

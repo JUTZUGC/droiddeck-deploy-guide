@@ -82,6 +82,9 @@ function infoText() {
     `MCP 支持：${project.mcpSupport}`,
     ...(project.highlights || []),
   ];
+  if ((project.verification || []).length) {
+    lines.push('验证状态：', ...project.verification.map(([k, v]) => `- ${k}：${v}`));
+  }
   return lines.join('\n');
 }
 
@@ -91,6 +94,7 @@ function sections() {
     { title: '管理面板与端口', text: [project.webuiUrl, project.adapterPorts].filter(Boolean).join(' ') },
     { title: '项目要点', text: (project.highlights || []).join('\n') },
     { title: 'MCP 支持', text: project.mcpSupport },
+    { title: '验证状态', text: (project.verification || []).map(([k, v]) => `${k}：${v}`).join('\n') },
     { title: '常见坑', text: project.pitfalls.join('\n') },
     { title: '项目定位', text: project.oneLiner },
   ];

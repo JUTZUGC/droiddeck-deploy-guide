@@ -71,6 +71,10 @@ if (cmd === 'get') {
   console.log(`官方文档：${project.officialDocs}`);
   for (const item of project.highlights || []) console.log(item);
   console.log(`MCP 支持：${project.mcpSupport}`);
+  if ((project.verification || []).length) {
+    console.log('验证状态：');
+    for (const [k, v] of project.verification) console.log(`- ${k}：${v}`);
+  }
 } else if (cmd === 'search') {
   const query = args.slice(1).join(' ').trim();
   if (!query) {
@@ -83,6 +87,7 @@ if (cmd === 'get') {
     ['管理面板与端口', [project.webuiUrl, project.adapterPorts].filter(Boolean).join(' ')],
     ['项目要点', (project.highlights || []).join(' ')],
     ['MCP 支持', project.mcpSupport],
+    ['验证状态', (project.verification || []).map(([k, v]) => `${k} ${v}`).join(' ')],
     ['常见坑', project.pitfalls.join(' ')],
   ];
   const hits = pool

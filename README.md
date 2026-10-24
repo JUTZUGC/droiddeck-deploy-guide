@@ -66,6 +66,15 @@ if command -v sha256sum >/dev/null 2>&1; then grep '  DroidDeck-0.6.0.apk$' SHA2
 
 安装包来源：[https://github.com/Droid-Deck/DroidDeck/releases/tag/0.6.0](https://github.com/Droid-Deck/DroidDeck/releases/tag/0.6.0)
 
+## 验证状态
+
+| 场景 | 状态 |
+|---|---|
+| APK 下载 + SHA256 校验 | 已验证 2026-10-24 |
+| adb 安装到手机 | 未实测 |
+
+> 「已验证」表示本机实际执行过并成功；「未实测」表示仅按官方文档整理，未跑通。
+
 ## MCP 接入
 
 DroidDeck 自身不含 MCP；仓库内的 tools/droiddeckctl 通过 ADB 在真机上控制应用（启动/停止会话、启动游戏、截图、录制等），面向自动化测试。本仓库的 MCP 只提供安装步骤、设备兼容性与常见坑。

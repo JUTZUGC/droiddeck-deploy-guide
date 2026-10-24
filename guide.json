@@ -19,6 +19,16 @@
     "webuiUrl": "",
     "adapterPorts": "",
     "collectedAt": "2026-10-24",
+    "verification": [
+      [
+        "APK 下载 + SHA256 校验",
+        "已验证 2026-10-24"
+      ],
+      [
+        "adb 安装到手机",
+        "未实测"
+      ]
+    ],
     "deploy": {
       "type": "binary",
       "steps": [
