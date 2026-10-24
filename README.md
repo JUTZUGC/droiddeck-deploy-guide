@@ -3,9 +3,12 @@
 > 第三方部署指南 · 非 DroidDeck 官方仓库。官方项目：[Droid-Deck/DroidDeck](https://github.com/Droid-Deck/DroidDeck)
 > 内容来自官方文档（2026-10-24）。项目迭代快，请以[官方文档](https://github.com/Droid-Deck/DroidDeck/blob/main/README.md)为准。
 
+[![⚡ 一键下载与校验](https://img.shields.io/badge/%E2%9A%A1_%E4%B8%80%E9%94%AE%E4%B8%8B%E8%BD%BD%E4%B8%8E%E6%A0%A1%E9%AA%8C-%E6%8E%A8%E8%8D%90%E7%99%BE%E5%BA%A6%E6%90%AD%E5%AD%90-2ea44f?style=for-the-badge)](#一键下载与校验推荐用百度搭子)
+
 ## 一键下载与校验（推荐：用百度搭子）
 
-不用自己敲命令，让 AI 帮你把安装包下载并校验好。
+> [!TIP]
+> 不用自己敲命令，让 AI 帮你把安装包下载并校验好。
 
 ⚠️ 本指南在电脑上执行下载与校验；安装目标是 Android 设备（Android 9+，Adreno 730 / 8xx）。
 
