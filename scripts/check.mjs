@@ -65,7 +65,7 @@ if (guide) {
   for (const f of ['officialRepo', 'officialDocs']) {
     if (!/^https:\/\//.test(project[f] || '')) fail(`project.${f} 必须是 https 链接`);
   }
-  if (!project.collectedAt) fail('guide.json 缺少 project.collectedAt（采集日期）');
+  if (!project.collectedAt) fail('guide.json 缺少 project.collectedAt（更新日期）');
   if (!Array.isArray(project.pitfalls) || !project.pitfalls.length) fail('guide.json 缺少 project.pitfalls');
   if (!project.deploy || !Array.isArray(project.deploy.steps) || !project.deploy.steps.length) {
     fail('guide.json 缺少 project.deploy.steps');
@@ -98,7 +98,7 @@ if (readme && guide) {
   if (!readme.includes(guide.project.officialDocs)) fail('README.md 未引用官方文档链接');
   if (!readme.includes('绝对路径')) fail('README.md 的 MCP 接入段必须写明用绝对路径注册');
   if (!readme.includes('"type": "local"')) fail('README.md 未给出百度搭子的 local 注册写法');
-  if (!readme.includes(guide.project.collectedAt)) fail('README.md 未标注采集日期');
+  if (!readme.includes(guide.project.collectedAt)) fail('README.md 未标注更新日期');
 }
 
 const mcpText = read('.mcp.json');

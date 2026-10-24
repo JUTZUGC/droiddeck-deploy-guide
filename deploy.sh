@@ -2,7 +2,7 @@
 set -euo pipefail
 # DroidDeck 一键下载与校验脚本（第三方指南，非官方）——按官方文档封装
 # 官方文档：https://github.com/Droid-Deck/DroidDeck/blob/main/README.md
-# 采集日期：2026-10-24
+# 更新日期：2026-10-24
 # 类型：binary
 cd "$(dirname "${BASH_SOURCE[0]}")"
 

@@ -66,7 +66,7 @@ if (cmd === 'get') {
   console.log(`项目：${project.nameCn}（${project.key}）`);
   console.log(`定位：${project.oneLiner}`);
   console.log(`协议：${project.license}`);
-  console.log(`Stars：${project.stars}（采集于 ${project.collectedAt}）`);
+  console.log(`Stars：${project.stars}（更新于 ${project.collectedAt}）`);
   console.log(`官方仓库：${project.officialRepo}`);
   console.log(`官方文档：${project.officialDocs}`);
   for (const item of project.highlights || []) console.log(item);

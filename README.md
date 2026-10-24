@@ -70,7 +70,7 @@ if command -v sha256sum >/dev/null 2>&1; then grep '  DroidDeck-0.6.0.apk$' SHA2
 
 DroidDeck 自身不含 MCP；仓库内的 tools/droiddeckctl 通过 ADB 在真机上控制应用（启动/停止会话、启动游戏、截图、录制等），面向自动化测试。本仓库的 MCP 只提供安装步骤、设备兼容性与常见坑。
 
-本仓库自带一个零依赖的 MCP server（`mcp-server.mjs`），读取同目录的 `guide.json`，提供 `get_guide` / `search_guide` / `get_project_info` 三个工具，内容均来自官方文档（采集日期 2026-10-24）。
+本仓库自带一个零依赖的 MCP server（`mcp-server.mjs`），读取同目录的 `guide.json`，提供 `get_guide` / `search_guide` / `get_project_info` 三个工具，内容均来自官方文档（更新日期 2026-10-24）。
 
 **在百度搭子里接入**：客户端不扫描仓库里的配置文件，需要由 AI 通过工作区的 MCP 注册接口注册，并且必须使用**绝对路径**（运行时的工作目录是会话目录，不是仓库目录）：
 
@@ -112,5 +112,5 @@ adb install -r .download\DroidDeck-0.6.0.apk
 ## 免责声明
 
 本仓库为第三方指南，与 DroidDeck 官方无隶属关系，不代表官方立场。
-教程基于官方文档编写（采集日期：2026-10-24），项目迭代快，请以[官方文档](https://github.com/Droid-Deck/DroidDeck/blob/main/README.md)为准。
+教程基于官方文档编写（更新日期：2026-10-24），项目迭代快，请以[官方文档](https://github.com/Droid-Deck/DroidDeck/blob/main/README.md)为准。
 因使用本教程产生的部署问题，请先在官方仓库的 issue 中检索。
