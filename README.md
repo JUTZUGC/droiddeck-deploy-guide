@@ -1,4 +1,4 @@
-# DroidDeck 一键下载与校验指南（非官方）
+# DroidDeck 一键下载与校验指南
 
 > 第三方部署指南 · 非 DroidDeck 官方仓库。官方项目：[Droid-Deck/DroidDeck](https://github.com/Droid-Deck/DroidDeck)
 > 内容来自官方文档（2026-10-24）。项目迭代快，请以[官方文档](https://github.com/Droid-Deck/DroidDeck/blob/main/README.md)为准。

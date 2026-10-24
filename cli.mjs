@@ -19,7 +19,7 @@ const args = process.argv.slice(2);
 const cmd = args[0] || 'help';
 
 function help() {
-  console.log(`部署指南 CLI（第三方指南，非官方）
+  console.log(`部署指南 CLI（第三方指南）
 
 用法：
   node cli.mjs --help           查看帮助
@@ -54,7 +54,7 @@ if (!check.ok) {
 }
 
 if (cmd === 'get') {
-  console.log(`# ${project.nameCn} 部署指南（第三方指南，非官方）\n`);
+  console.log(`# ${project.nameCn} 部署指南（第三方指南）\n`);
   console.log('官方部署步骤：');
   for (const step of project.deploy.steps) console.log(`  ${step}`);
   if (project.webuiUrl) console.log(`\n管理面板：${project.webuiUrl}`);

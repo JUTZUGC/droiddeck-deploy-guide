@@ -83,7 +83,7 @@ if (guide) {
 const readme = read('README.md');
 if (readme && guide) {
   if (readme.includes('{{')) fail('README.md 存在未替换的模板变量 {{...}}');
-  if (!readme.includes('非官方')) fail('README.md 未声明「非官方」');
+  if (!readme.includes('第三方部署指南')) fail('README.md 首行需注明「第三方部署指南」');
   if (!readme.includes(`${guide.code}/${guide.project.repoName}`)) {
     fail('README.md 推广指令里缺少 <归因码>/<仓库名>，归因链路断开');
   }

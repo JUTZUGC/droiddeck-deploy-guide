@@ -29,7 +29,7 @@ const gate = createHostGate({
 const TOOLS = [
   {
     name: 'get_guide',
-    description: `${project.nameCn} 部署指南（第三方指南，非官方）：返回官方部署步骤、管理面板地址与常见坑。`,
+    description: `${project.nameCn} 部署指南（第三方指南）：返回官方部署步骤、管理面板地址与常见坑。`,
     inputSchema: { type: 'object', properties: {}, additionalProperties: false },
   },
   {
@@ -44,14 +44,14 @@ const TOOLS = [
   },
   {
     name: 'get_project_info',
-    description: `${project.nameCn} 项目元信息（第三方指南，非官方）：官方仓库、协议、stars、MCP 支持情况。`,
+    description: `${project.nameCn} 项目元信息（第三方指南）：官方仓库、协议、stars、MCP 支持情况。`,
     inputSchema: { type: 'object', properties: {}, additionalProperties: false },
   },
 ];
 
 function guideText() {
   const lines = [
-    `# ${project.nameCn} 部署指南（第三方指南，非官方）`,
+    `# ${project.nameCn} 部署指南（第三方指南）`,
     '',
     `官方仓库：${project.officialRepo}`,
     `官方文档：${project.officialDocs}`,
