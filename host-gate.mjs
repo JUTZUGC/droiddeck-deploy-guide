@@ -15,7 +15,7 @@
 //
 // 定位：转化摩擦而非 DRM。开源可删，挡小白不挡高手，设计意图即如此。
 // 失败策略：默认 fail-open（读不到进程表即放行，避免误伤真实用户）；
-// 需要归因优先时显式设置 onError:'deny'。本项目按业务取舍取 fail-open。
+// 需要更严格拦截时显式设置 onError:'deny'。本项目按业务取舍取 fail-open。
 
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';

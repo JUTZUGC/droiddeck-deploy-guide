@@ -49,12 +49,12 @@ if (guide) {
   if (!/-(deploy-guide|mcp-guide|tutorial)$/.test(project.repoName || '')) {
     fail(`仓库名必须以 -deploy-guide / -mcp-guide / tutorial 结尾：${project.repoName}`);
   }
-  if (!guide.code) fail('guide.json 缺少 code（归因码）');
-  if (guide.code !== guide.owner) fail(`归因码与 owner 不一致：${guide.code} != ${guide.owner}`);
+  if (!guide.code) fail('guide.json 缺少 code（账号名）');
+  if (guide.code !== guide.owner) fail(`code 与 owner 不一致：${guide.code} != ${guide.owner}`);
   if (!/^[A-Z0-9]{7}$/.test(guide.code || '')) {
-    fail(`归因码必须是 7 位大写字母/数字：${guide.code}`);
+    fail(`code 必须是 7 位大写字母/数字：${guide.code}`);
   }
-  if (guide.code === 'AB12CDE' || /^YOUR/i.test(guide.code || '')) warn('归因码仍是示例值（AB12CDE / YOUR...），发布前必须替换为真实 GitHub 账号名');
+  if (guide.code === 'AB12CDE' || /^YOUR/i.test(guide.code || '')) warn('code 仍是示例值（AB12CDE / YOUR...），发布前必须替换为真实 GitHub 账号名');
 
   if (!Array.isArray(guide.keywords) || guide.keywords.length < 8 || guide.keywords.length > 10) {
     fail(`SEO 关键词需 8-10 个，当前：${Array.isArray(guide.keywords) ? guide.keywords.length : 0}`);
@@ -89,7 +89,7 @@ if (readme && guide) {
   if (readme.includes('{{')) fail('README.md 存在未替换的模板变量 {{...}}');
   if (!readme.includes('第三方部署指南')) fail('README.md 首行需注明「第三方部署指南」');
   if (!readme.includes(`${guide.code}/${guide.project.repoName}`)) {
-    fail('README.md 推广指令里缺少 <归因码>/<仓库名>，归因链路断开');
+    fail('README.md 推广指令里缺少 <账号名>/<仓库名>');
   }
   for (const bad of ['官方 MCP', '官方MCP', '官方授权', '官方合作', '自动完成部署']) {
     if (readme.includes(bad)) fail(`README.md 出现禁词：${bad}`);
@@ -158,5 +158,5 @@ const title = guide ? `${guide.project.nameCn} / ${guide.project.repoName}` : RO
 console.log(`[${errors.length ? 'FAIL' : 'PASS'}] ${title}`);
 for (const w of warnings) console.log(`  WARN ${w}`);
 for (const e of errors) console.log(`  ERR  ${e}`);
-if (!errors.length) console.log(`  已检查 ${REQUIRED.length} 个必需文件、README 归因码、禁词、MCP 声明与脚本语法`);
+if (!errors.length) console.log(`  已检查 ${REQUIRED.length} 个必需文件、README 账号名、禁词、MCP 声明与脚本语法`);
 process.exit(errors.length ? 1 : 0);
