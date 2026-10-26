@@ -8,7 +8,7 @@
     "oneLiner": "面向 Android 掌机的 SteamOS 体验项目",
     "officialRepo": "https://github.com/Droid-Deck/DroidDeck",
     "officialDocs": "https://github.com/Droid-Deck/DroidDeck/blob/main/README.md",
-    "stars": "13.4k",
+    "stars": "14.6k",
     "license": "GPL-3.0",
     "highlights": [
       "支持设备：Android 9+，Adreno 730 或 8xx（Adreno 6xx 为实验性；Mali / Xclipse / PowerVR / Adreno 710 不支持）",
